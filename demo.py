@@ -43,7 +43,7 @@ ct5 = she.encrypt(pk, pt3, n, q, t, poly_mod, std_err_enc)
 ct6 = she.mul_cipher(ct5, ct5, q, t, p, poly_mod, rlk0, rlk1)
 for i in range(5):
     ct6 = she.mul_cipher(ct5, ct6, q, t, p, poly_mod, rlk0, rlk1)
-    print("\t Multiplication {}: ({} * {})^10000 = {}".format(i, 1, 1, bintodec(she.decrypt(sk, ct6, q, t, poly_mod, 4))))
+    print("\t Multiplication {}: ({} * {})^{} = {}".format(i + 1, 1, 1, i + 1, bintodec(she.decrypt(sk, ct6, q, t, poly_mod, 4))))
 
 # Demo of how inefficient HE currently is
 print("(1 * 1)^10000")
